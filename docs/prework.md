@@ -4,7 +4,7 @@ Trainees are highly encouraged to install **Bandage** in advance to attending th
 
 Bandage is a popular desktop application/CLI tool for visualizing graph fragment assembly (.GFA) files. We will be using this tool extensively in Module 6 Lab to analyze bacterial pangenomes.
 
-## Installation Instructions
+## Installation guide
 
 **Step 1. Download the tool**
 Choose the download link matching your computer OS:
