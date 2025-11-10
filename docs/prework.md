@@ -4,9 +4,9 @@ Trainees are highly encouraged to install **Bandage** in advance to attending th
 
 Bandage is a popular desktop application/CLI tool for visualizing graph fragment assembly (.GFA) files. We will be using this tool extensively in Module 6 Lab to analyze bacterial pangenomes.
 
-### Installation Instructions
+## Installation Instructions
 
-Step 1. Download the tool
+**Step 1. Download the tool**
 Choose the download link matching your computer OS:
 
 - [Windows 8/10/11](https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Windows_v0_8_1.zip)
@@ -21,9 +21,9 @@ Choose the download link matching your computer OS:
 
 - [MacOS 11+ (ARM)](https://github.com/rrwick/Bandage/releases/download/v0.9.0/Bandage_macOS-aarch64_v0.9.0.zip)
 
-Step 2. Decompress the .zip file
+**Step 2. Decompress the .zip file**
 
-Step 3. Navigate to the extracted folder and open the Bandage application
+**Step 3. Navigate to the extracted folder and open the Bandage application**
 
 > [!NOTE]  
 > For Mac users, you will need to move the `Bandage.app` folder to your Applications directory
