@@ -3,7 +3,9 @@
 
 ### Introduction
 
-In this integrative assignment, you will be applying some of the genomic epidemiology analysis methods covered in this workshop. The focus of the assignment will be on *Salmonella enterica*, an enteric pathogen that primarily spreads by human consumption of contaminated foods in Canada and the United States. Here, you will examine isolates of *Salmonella* serovar Heidelberg from three epidemiologically distinct foodborne outbreaks that occurred in Quebec, Canada between 2012-2014. For more detailed background on how the outbreaks happened, you are encouraged to read over the original publication by [Bekal et al. (2014)](https://pubmed.ncbi.nlm.nih.gov/26582830/). You will be analyzing the whole-genome sequencing (WGS) data generated from the study to investigate these foodborne outbreaks. Briefly, you will identify core genome single nucleotide variants (SNVs) from pre-assembled genomes, construct a core genome SNV phylogenetic tree and infer the evolutionary relationships of the isolates. In addition, you will annotate the bacterial genomes to detect the presence of various genetic features from this *Salmonella* outbreak dataset.
+In Module 6 Lab, we will explore how pangenome graphs can be used to model and compare sequence variations in a population of bacterial genomes. We will work with a *Salmonella enterica* dataset comprising a large number of cases linked to three distinct foodborne outbreaks that occurred in Quebec, Canada between 2012-2014. For a more detailed background on how the outbreaks happened, you are encouraged to review the original study by [Bekal et al. (2014)](https://pubmed.ncbi.nlm.nih.gov/26582830/). 
+
+This dataset captures a wide range of sequence variations, including single-nucleotide polymorphisms (SNPs), insertions, deletions, and gene presence/absence differences among isolates. As you analyze the pangenome graph, see if you can identify these variations, describe what type of genetic changes they represent, and determine which functional elements (e.g., genes, regulatory regions, or mobile genetic elements) they occur in.
 
 ### Learning Objectives
 By the end of the session, you will be able to:
@@ -25,19 +27,19 @@ mkdir pg_demo && cd pg_demo
 conda activate pg_tools
 ```
 
-### Part 1: Understanding the structural layout of cDBG
+### Part 1: Understanding the structural layout of cDBGs
 #### Build colored de Bruijn graph (k=31)
 ```bash
 bifrost build -r strain_A.fna,strain_B.fna,strain_C.fna \
               -k 31 -t 4 -o salmonella_k31
 
 # Output:
-#   salmonella_k31.gfa   → compacted DBG in GFA format
+#   salmonella_k31.gfa        → compacted DBG in GFA format
 #   salmonella_k31.bfg_colors → color information
 ```
 
 #### Visualize cDBG in Bandage
-To visualize the output graph (.GFA) constructed by `Bifrost`, you will need `Bandage` installed on your own computer (Not on the server!). You can download pre-compiled binaries from [here](https://github.com/rrwick/Bandage/releases) (download and decompress the binary matching your computer OS). 
+To visualize the output graph (.GFA) constructed by `Bifrost`, you will need `Bandage` installed on your own computer (Not on the server!). You can find the installation guide [here](https://github.com/jimmyliu1326/CBW_MIG_2025/blob/main/docs/prework.md)
 
 For Bandage to access the output files, the files need to be transferred to your local device, which can be done using `scp`
 
@@ -46,8 +48,10 @@ For Bandage to access the output files, the files need to be transferred to your
 scp server:/pg_demo/salmonella_k31.gfa /path/to/local
 ```
 
-### Part 2: Querying a pangenome graph
-#### Find a Gene or Region of Interest
+Now open the GFA file in `Bandage` and click [Draw Graph]. It should take a few seconds to render the graph.
+
+### Part 2: Annotating a pangenome graph
+#### Finding a Gene or Region of Interest
 
 Suppose we have a small gene fragment from strain A:
 
