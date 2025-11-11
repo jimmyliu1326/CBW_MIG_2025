@@ -73,9 +73,9 @@ Next, align the unitig sequences of the nodes in the bubble structure to determi
 
 ### Query the pangenome graph
 
-To determine which subset of the population contains our alleles of interest, we use the `query` subcommand in `Bifrost`.
+To determine which subset of the population contains our alleles of interest, we can use the `query` subcommand in `Bifrost`.
 
-First save the sequences of the two alleles into a single FASTA file called `query.fa`, then call query the FASTA file against the graph:
+First save the sequences of the two alleles into a single FASTA file called `query.fa`, then query the FASTA file against the graph:
 
 ```bash
 bifrost query -g salmonella_k31.gfa -c salmonella_k31.bfg_colors \ 
