@@ -58,7 +58,7 @@ Alternative paths in pangenome graphs indicate sequence polymorphism, but how do
 
 ### Analyzing a Gene or Region of Interest using BLAST
 
-Download the hilA gene sequence from NCBI [STM2876]() and blast the gene against all nodes of the graph to find the most likely location of the gene within the context of the pangenome graph.
+[Download](https://www.ncbi.nlm.nih.gov/nuccore/NC_003197.2?from=3019846&to=3021524&report=fasta) the hilA gene sequence from NCBI and blast the gene against all nodes of the graph to find the most likely location of the gene within the context of the pangenome graph.
 
 > - Based on the graph topology, what type of mutation does the gene likely contain? Is it a SNP? Insertion? Deletion?
 
