@@ -86,9 +86,12 @@ Output interpretation (`query_result.tsv`):
 
 ```bash
 Query	strainA  strainB  strainC
-3131	0        0        1
-3531	1        1        0
+allele_A	0        0        1
+allele_B	1        1        0
 ```
+
+> - Which outbreak strains share the same allele for the hilA gene?
+> - How do we determine every possible variation that are only carried by a specific strain?
 
 ## Part 3: Impact of k-mer length on graph topology
 
