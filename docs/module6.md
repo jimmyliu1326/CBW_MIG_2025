@@ -91,7 +91,7 @@ allele_B	1        1        0
 ```
 
 > - Which outbreak strains share the same allele for the hilA gene?
-> - How do we determine every possible variation that are only carried by a specific strain?
+> - How do we determine every possible variation that is uniquely carried by a specific strain?
 
 ## Part 3: Impact of k-mer length on graph topology
 
