@@ -66,7 +66,7 @@ Next, align the unitig sequences of the nodes in the bubble structure to determi
 
 1. Copy the exact sequence of the two nodes in the bubble structure by first selecting the node -> navigating to [Output] -> [Copy selected node to clipboard].
 
-2. Open BLASTN in the browser from this [link](https://blast.ncbi.nlm.nih.gov/Blast.cgi?BLAST_SPEC=blast2seq&LINK_LOC=align2seq&PAGE_TYPE=BlastSearch) and paste both sequence into the text box to align them to each other.
+2. Open BLASTN in the browser ([link](https://blast.ncbi.nlm.nih.gov/Blast.cgi?BLAST_SPEC=blast2seq&LINK_LOC=align2seq&PAGE_TYPE=BlastSearch)) and paste both sequence into the text box to align them to each other.
 
 > - How many polymorphic sites are there?
 > - How do the two alleles differ?
