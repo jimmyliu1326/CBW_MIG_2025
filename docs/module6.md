@@ -50,29 +50,43 @@ scp server:/pg_demo/salmonella_k31.gfa /path/to/local
 
 Now open the GFA file in `Bandage` and click [Draw Graph]. It should take a few seconds to render the graph.
 
-## Part 2: Annotating a pangenome graph
-### Finding a Gene or Region of Interest
+## Part 2: Annotating and interpreting a pangenome graph
 
-Suppose we have a small gene fragment from strain A:
+Alternative paths in pangenome graphs indicate sequence polymorphism, but how do we know if a polymorphism:
+- spans a coding sequence, intergenic region or mobile genetic element?
+- is found in which samples?
 
-```bash
-grep -A1 "geneX" strain_A.fna | head -n 2 > query.fa
-```
+### Analyzing a Gene or Region of Interest using BLAST
 
-### Query the Graph
+Download the hilA gene sequence from NCBI [STM2876]() and blast the gene against all nodes of the graph to find the most likely location of the gene within the context of the pangenome graph.
+
+- Based on the graph topology, what type of mutation does the gene likely contain? Is it a SNP? Insertion? Deletion?
+
+Next, align the unitig sequences of the nodes in the bubble structure to determine the exact genotypic difference. 
+
+> Copy the exact sequence of the two nodes in the bubble structure by first selecting the node -> navigating to [Output] -> [Copy selected node to clipboard].
+> Open BLASTN in the browser using this [link](https://blast.ncbi.nlm.nih.gov/Blast.cgi?BLAST_SPEC=blast2seq&LINK_LOC=align2seq&PAGE_TYPE=BlastSearch) and paste both sequence into the text box to align them to each other.
+
+- How many polymorphic sites are there?
+- How do the two alleles differ?
+
+### Query the pangenome graph
+
+To determine which subset of the population contains our alleles of interest, we use the `query` subcommand in `Bifrost`.
+
+First save the sequences of the two alleles into a single FASTA file called `query.fa`, then call query the FASTA file against the graph:
 
 ```bash
 bifrost query -g salmonella_k31.gfa -c salmonella_k31.bfg_colors \ 
-              -r query.fa -o query_result.tsv
+              -r query.fa -o query_result.tsv -e 1
 ```
 
 Output interpretation (`query_result.tsv`):
 
 ```bash
-Query	Color	Presence
-geneX	A	1	Present
-geneX	B	0	Absent
-geneX	C	1	Present
+Query	strainA  strainB  strainC
+3131	0        0        1
+3531	1        1        0
 ```
 
 ## Part 3: Impact of k-mer length on graph topology
