@@ -60,7 +60,7 @@ Alternative paths in pangenome graphs indicate sequence polymorphism, but how do
 
 Download the hilA gene sequence from NCBI [STM2876]() and blast the gene against all nodes of the graph to find the most likely location of the gene within the context of the pangenome graph.
 
-- Based on the graph topology, what type of mutation does the gene likely contain? Is it a SNP? Insertion? Deletion?
+> - Based on the graph topology, what type of mutation does the gene likely contain? Is it a SNP? Insertion? Deletion?
 
 Next, align the unitig sequences of the nodes in the bubble structure to determine the exact genotypic difference. 
 
@@ -68,8 +68,8 @@ Next, align the unitig sequences of the nodes in the bubble structure to determi
 
 2. Open BLASTN in the browser using this [link](https://blast.ncbi.nlm.nih.gov/Blast.cgi?BLAST_SPEC=blast2seq&LINK_LOC=align2seq&PAGE_TYPE=BlastSearch) and paste both sequence into the text box to align them to each other.
 
-- How many polymorphic sites are there?
-- How do the two alleles differ?
+> - How many polymorphic sites are there?
+> - How do the two alleles differ?
 
 ### Query the pangenome graph
 
