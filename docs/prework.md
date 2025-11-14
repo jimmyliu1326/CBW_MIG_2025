@@ -22,6 +22,7 @@ Choose the download link matching your computer OS:
 
 > [!NOTE]  
 > If you run into "Bandage is damaged" error, open the terminal, navigate to location of the extracted folder and run `xattr -cr Bandage.app`
+>
 > For Mac users, you will need to move the `Bandage.app` folder to your Applications directory
 
 If the application runs successfully, you should expect to see the following window:
@@ -39,4 +40,4 @@ If the application runs successfully, you should expect to see the following win
 To execute the installer, double click the downloaded `.exe`/`.dmg` file and follow the installer prompts to complete the process.
 
 > [!NOTE]  
-> For Mac users, if you receive a warning indicating `Unable to verify content is free of malware`, you can manually override this setting in System Settings > Privacy & Security by clicking "Open Anyway"
+> For Mac users, if you receive a warning indicating `Unable to verify content is free of malware`, you can manually override this setting in System Settings > Privacy & Security > Scroll down to Security section > Click "Open Anyway"
