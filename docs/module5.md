@@ -1,9 +1,9 @@
-# CBW Module 6 Lab
+# CBW Module 5 Lab
 *Developed by Jimmy Liu and William Hsiao*
 
 ## Introduction
 
-In Module 6 Lab, we will explore how pangenome graphs can be used to model and compare sequence variations in a population of bacterial genomes. We will work with a *Salmonella enterica* dataset comprising a large number of cases linked to three distinct foodborne outbreaks that occurred in Quebec, Canada between 2012-2014. For a more detailed background on how the outbreaks happened, you are encouraged to review the original study by [Bekal et al. (2014)](https://pubmed.ncbi.nlm.nih.gov/26582830/). 
+In this lab, we will explore how pangenome graphs can be used to model and compare sequence variations in a population of bacterial genomes. We will work with a *Salmonella enterica* dataset comprising a large number of cases linked to three distinct foodborne outbreaks that occurred in Quebec, Canada between 2012-2014. For a more detailed background on how the outbreaks happened, you are encouraged to review the original study by [Bekal et al. (2014)](https://pubmed.ncbi.nlm.nih.gov/26582830/). 
 
 This dataset captures a wide range of sequence variations, including single-nucleotide polymorphisms (SNPs), insertions, deletions, and gene presence/absence differences among isolates. As you analyze the pangenome graph, see if you can identify these variations, describe what type of genetic changes they represent, and determine which functional elements (e.g., genes, regulatory regions, or mobile genetic elements) they occur in.
 
