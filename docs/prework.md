@@ -33,6 +33,7 @@ If the application runs successfully, you should expect to see the following win
 - [MacOS](https://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/ncbi-blast-2.17.0+-universal.dmg)
 
 **Step 2. Run the installer**
+
 To execute the installer, double click the downloaded `.exe`/`.dmg` file and follow the installer prompts to complete the process.
 
 
