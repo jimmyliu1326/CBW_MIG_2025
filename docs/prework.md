@@ -7,6 +7,7 @@ Bandage is a popular desktop application/CLI tool for visualizing graph fragment
 ## Part 1: Installing Bandage
 
 **Step 1. Download the tool**
+
 Choose the download link matching your computer OS:
 
 - [Windows 8/10/11](https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Windows_v0_8_1.zip)
