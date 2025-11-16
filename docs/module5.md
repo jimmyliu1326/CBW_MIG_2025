@@ -35,7 +35,7 @@ find data/ -type f > refs.txt
 # build cDBG
 Bifrost build -r refs.txt \
               -k 31 -t 4 -c -o salmonella_k31
-
+              
 # Output:
 #   salmonella_k31.gfa.gz     → compacted DBG in GFA format
 #   salmonella_k31.bfg_colors → color information
@@ -62,7 +62,7 @@ Alternative paths in pangenome graphs indicate sequence polymorphism, but how do
 
 ### Analyzing a Gene or Region of Interest using BLAST
 
-[Download](https://www.ncbi.nlm.nih.gov/nuccore/NC_003197.2?from=3019846&to=3021524&report=fasta) the hilA gene sequence from NCBI and blast the gene against all nodes of the graph to find the most likely location of the gene within the context of the pangenome graph.
+[Download](https://www.ncbi.nlm.nih.gov/nuccore/NC_003197.2?from=3036684&to=3037979&report=fasta&strand=true) the spaL gene sequence from NCBI and blast the gene against all nodes of the graph to find the most likely location of the gene within the context of the pangenome graph.
 
 Calling BLAST in `Bandage`:
 
@@ -86,8 +86,8 @@ To determine which subset of the population contains our alleles of interest, we
 First save the sequences of the two alleles into a single FASTA file called `query.fa`, then query the FASTA file against the graph:
 
 ```bash
-Bifrost query -g salmonella_k31.gfa -c salmonella_k31.bfg_colors \ 
-              -r query.fa -o query_result.tsv -e 1.0
+Bifrost query -g salmonella_k31.gfa -C salmonella_k31.bfg_colors \ 
+              -q query.fa -o query_result.tsv -e 1.0
 ```
 
 Output interpretation (`query_result.tsv`):
