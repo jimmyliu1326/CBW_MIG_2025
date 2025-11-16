@@ -21,21 +21,25 @@ By the end of the session, you will be able to:
 ## Environment Setup
 ```bash
 # Create working directory
-mkdir pg_demo && cd pg_demo
+cp -r CourseData/module5 ~/ && cd ~/module5
 
 # Activate tool environment
-conda activate pg_tools
+mamba activate pg_tools
 ```
 
 ## Part 1: Understanding the structural layout of cDBGs
 ### Build colored de Bruijn graph (k=31)
 ```bash
-bifrost build -r strain_A.fna,strain_B.fna,strain_C.fna \
-              -k 31 -t 4 -o salmonella_k31
+# create a list containing paths to input genomes
+find data/ -type f > refs.txt
+# build cDBG
+Bifrost build -r refs.txt \
+              -k 31 -t 4 -c -o salmonella_k31
 
 # Output:
-#   salmonella_k31.gfa        → compacted DBG in GFA format
+#   salmonella_k31.gfa.gz     → compacted DBG in GFA format
 #   salmonella_k31.bfg_colors → color information
+#   salmonella_k31.bfi        → graph search index
 ```
 
 ### Visualize cDBG in Bandage
@@ -45,7 +49,7 @@ For Bandage to access the output files, the files need to be transferred to your
 
 ```bash
 # copy GFA file remote location to local device
-scp server:/pg_demo/salmonella_k31.gfa /path/to/local
+scp server:/home/ubuntu/module5/salmonella_k31.gfa /path/to/local_dir/
 ```
 
 Now open the GFA file in `Bandage` and click [Draw Graph]. It should take a few seconds to render the graph.
@@ -82,8 +86,8 @@ To determine which subset of the population contains our alleles of interest, we
 First save the sequences of the two alleles into a single FASTA file called `query.fa`, then query the FASTA file against the graph:
 
 ```bash
-bifrost query -g salmonella_k31.gfa -c salmonella_k31.bfg_colors \ 
-              -r query.fa -o query_result.tsv -e 1
+Bifrost query -g salmonella_k31.gfa -c salmonella_k31.bfg_colors \ 
+              -r query.fa -o query_result.tsv -e 1.0
 ```
 
 Output interpretation (`query_result.tsv`):
@@ -101,13 +105,13 @@ allele_B	1        1        0
 
 ```bash
 # Step 1 – Rebuild with Smaller k (=21)
-bifrost build -r strain_A.fna,strain_B.fna,strain_C.fna \
+Bifrost build -r data/*.fa \
               -k 21 -t 4 -o salmonella_k21
 ```
 
 ```bash
 # Step 2 – Rebuild with Larger k (=51)
-bifrost build -r strain_A.fna,strain_B.fna,strain_C.fna \
+Bifrost build -r data/*.fa \
               -k 51 -t 4 -o salmonella_k51
 ```
 
