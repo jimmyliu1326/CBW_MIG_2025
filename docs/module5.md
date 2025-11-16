@@ -98,20 +98,20 @@ allele_A	0        0        1
 allele_B	1        1        0
 ```
 
-> - Which outbreak strains share the same allele for the hilA gene?
+> - Which outbreak strains share the same allele for the spaL gene?
 > - How do we determine every possible variation that is uniquely carried by a specific strain?
 
 ## Part 3: Impact of k-mer length on graph topology
 
 ```bash
 # Step 1 – Rebuild with Smaller k (=21)
-Bifrost build -r data/*.fa \
+Bifrost build -r refs.txt \
               -k 21 -t 4 -o salmonella_k21
 ```
 
 ```bash
 # Step 2 – Rebuild with Larger k (=51)
-Bifrost build -r data/*.fa \
+Bifrost build -r refs.txt \
               -k 51 -t 4 -o salmonella_k51
 ```
 
