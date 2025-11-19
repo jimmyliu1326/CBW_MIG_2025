@@ -38,7 +38,7 @@ Bifrost build -r refs.txt \
               
 # Output:
 #   salmonella_k31.gfa.gz     → compacted DBG in GFA format
-#   salmonella_k31.bfg_colors → color information
+#   salmonella_k31.colors.bfg → color information
 #   salmonella_k31.bfi        → graph search index
 ```
 
@@ -48,6 +48,8 @@ To visualize the output graph (.GFA) constructed by `Bifrost`, you will need `Ba
 For Bandage to access the output files, the files need to be transferred to your local device, which can be done using `scp`
 
 ```bash
+# remember to decompress the .GFA file before transfer
+gunzip salmonella_k31.gfa.gz
 # copy GFA file remote location to local device
 scp server:/home/ubuntu/module5/salmonella_k31.gfa /path/to/local_dir/
 ```
@@ -86,7 +88,7 @@ To determine which subset of the population contains our alleles of interest, we
 First save the sequences of the two alleles into a single FASTA file called `query.fa`, then query the FASTA file against the graph:
 
 ```bash
-Bifrost query -g salmonella_k31.gfa -C salmonella_k31.bfg_colors \ 
+Bifrost query -g salmonella_k31.gfa -C salmonella_k31.colors.bfg \ 
               -q query.fa -o query_result.tsv -e 1.0
 ```
 
