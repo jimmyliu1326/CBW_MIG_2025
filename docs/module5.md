@@ -134,8 +134,8 @@ Let's now summarize the use the cDBG for comparative genomics and the exploratio
 | Strengths | Weaknesses |
 | --- | --- |
 | Captures SNPs, indels, gene gain/loss without reference | Visualization becomes complex for many genomes
-| Unified data structure to encode pan-genome variations |	Parameter choice (k, abundance) critical |
-| Efficient querying across 1000s of genomes via colored graphs | Interpretation needs experience |
+| Unified data structure to encode pan-genome variations | Interpretation needs experience |
+| Efficient querying across 1000s of genomes via colored graphs | Parameter choice (k) is critical |
 | Unitigs yield greater specificity than canonical k-mers | Highly sensitive to assembly fragmentation |
 
 **Closing reflection:**
