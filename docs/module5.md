@@ -51,7 +51,7 @@ For Bandage to access the output files, the files need to be transferred to your
 # remember to decompress the .GFA file before transfer
 gunzip salmonella_k31.gfa.gz
 # copy GFA file remote location to local device
-scp server:/home/ubuntu/module5/salmonella_k31.gfa /path/to/local_dir/
+scp server:/home/ubuntu/workspace/module5/salmonella_k31.gfa /path/to/local_dir/
 ```
 
 Now open the GFA file in `Bandage` and click [Draw Graph]. It should take a few seconds to render the graph.
@@ -140,6 +140,7 @@ Let's now summarize the use the cDBG for comparative genomics and the exploratio
 
 **Closing reflection:**
 - How might long read sequencing impact the quality of cdBG construction?
+
 
 
 
