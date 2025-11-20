@@ -21,7 +21,7 @@ By the end of the session, you will be able to:
 ## Environment Setup
 ```bash
 # Create working directory
-cp -r CourseData/module5 ~/ && cd ~/module5
+cp -r ~/CourseData/module5 ~/workspace && cd ~/workspace/module5
 
 # Activate tool environment
 mamba activate pg_tools
